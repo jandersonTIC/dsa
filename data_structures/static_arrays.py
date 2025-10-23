@@ -37,6 +37,13 @@ class Solution:
 
         return len(nums)
     
+    def hasDuplicate(self, nums: List[int]) -> bool:
+        """
+        Final complexity:
+        Time: O(n)
+        Space: O(n)
+        """
+        return True if len(set(nums)) < len(nums) else False
 
 s = Solution()
 
