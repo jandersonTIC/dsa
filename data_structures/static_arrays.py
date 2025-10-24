@@ -46,18 +46,19 @@ class Solution:
         return len(set(nums)) < len(nums)
     
     def removeElement(self, nums: List[int], val: int) -> int:
-        if not len(nums): return 0
+        """
+        Final complexity:
+        Time: O(n)
+        Space: O(1)
+        """
+        k = 0
 
-        nums.sort()
-        i = 0
+        for i in range(len(nums)):
+            if val != nums[i]:
+                nums[k] = nums[i]
+                k += 1
 
-        while i < len(nums):
-            if val == nums[i]:
-                self.remove_middle(i, nums)
-                i-=1
-            i+=1
-
-        return len(nums)
+        return k
 
 s = Solution()
 
