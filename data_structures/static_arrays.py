@@ -43,7 +43,7 @@ class Solution:
         Time: O(n)
         Space: O(n)
         """
-        return True if len(set(nums)) < len(nums) else False
+        return len(set(nums)) < len(nums)
 
 s = Solution()
 
