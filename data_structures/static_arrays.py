@@ -44,6 +44,29 @@ class Solution:
         Space: O(n)
         """
         return len(set(nums)) < len(nums)
+    
+    def removeElement(self, nums: List[int], val: int) -> int:
+        """
+        Final complexity:
+        Time: O(n^2)
+        Space: O(n)
+        """
+        if not len(nums): return 0
+
+        numbers = []
+        nums.sort()
+
+        for num in nums:
+            if val != num:
+                numbers.append(num)
+        
+        for i in range(len(numbers)):
+            nums[i] = numbers[i]
+        
+        for i in range(len(numbers), len(nums)):
+            self.remove_middle(i, nums)
+
+        return len(nums)
 
 s = Solution()
 
